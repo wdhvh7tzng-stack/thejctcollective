@@ -1,0 +1,6 @@
+import type {Metadata} from 'next';
+import {CopyEmail} from '@/components/interactive';
+import {Label,PageHero,TextLink} from '@/components/editorial';
+import {emailHref,site} from '@/content/site';
+export const metadata:Metadata={title:'Inquiries',description:'Have a challenge, an idea, or a project in mind? Start a conversation with the jct collective.',alternates:process.env.NEXT_PUBLIC_SITE_URL?{canonical:'/inquiries'}:undefined};
+export default function Inquiries(){return <><PageHero label="003 / GET IN TOUCH" title="Good things start with a conversation." description="Whether you have a fully formed brief or you’re still figuring out what you need, we’d love to hear what’s on your mind."/><section className="inquiry-contact"><Label>A DIRECT LINE</Label><a className="big-email" href={emailHref}>{site.email}<span>↗</span></a><CopyEmail/><div className="inquiry-details"><span className="inquiry-star" aria-hidden="true">✳</span><div><h2>Every good collaboration<br/>starts somewhere.</h2><p>Tell us a little about your business, what you’re looking for help with, and any timing you have in mind. We can take it from there.</p><TextLink href={emailHref}>Start an inquiry</TextLink><p className="small-note">Opens your email app. Your message stays yours to send.</p></div></div></section></>}

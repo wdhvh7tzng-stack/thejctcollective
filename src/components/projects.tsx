@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import {Project,publishedProjects} from '@/content/projects';
+import {ContactCTA,Label} from './editorial';
+export function ProjectCard({project}:{project:Project}){return <article><Link href={`/work/${project.slug}`}>{project.thumbnailImage&&<Image src={project.thumbnailImage} alt={project.title} width={900} height={650}/>}<p className="label">{project.category}</p><h3>{project.title}</h3><p>{project.shortDescription}</p></Link></article>}
+export function CaseStudy({project:p}:{project:Project}){const related=publishedProjects.filter(x=>x.id!==p.id);return <article className="case-study"><Label>{p.category}</Label><h1>{p.title}</h1><p>{p.client} / {p.year}</p><p>{p.shortDescription}</p><p>{p.services.join(' / ')}</p>{p.heroImage&&<Image src={p.heroImage} alt={p.title} width={1500} height={1000} priority/>}{[['Challenge',p.challenge],['Strategic insight',p.insight],['Approach',p.approach],['Creative execution',p.solution],['Outcome',p.outcome]].map(([label,text])=><section key={label}><h2>{label}</h2><p>{text}</p></section>)}{p.galleryImages.map(img=><Image key={img.src} src={img.src} alt={img.alt} width={1200} height={800}/>)}{related.length>0&&<section><h2>Related work</h2>{related.map(project=><ProjectCard key={project.id} project={project}/>)}</section>}<ContactCTA/></article>}
