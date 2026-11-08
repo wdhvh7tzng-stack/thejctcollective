@@ -65,3 +65,9 @@ NEXT_PUBLIC_BASE_PATH=/thejctcollective NEXT_PUBLIC_SITE_URL=https://wdhvh7tzng-
 ```
 
 Serve `out/` using a static HTTP server with that directory mounted at `/thejctcollective/`. Static output does not use `npm start`; use `npm run dev` for normal development. Images use Next's unoptimized setting because GitHub Pages has no image-processing server. All published case-study slugs are generated at build time; publishing requires a rebuild. When no projects are published, the internal build-only fallback resolves to not-found content and never enters the sitemap or listings.
+
+## Hand & Stone case study
+
+The published `/work/hand-and-stone/` entry in `src/content/projects.ts` adapts the uploaded advertising recommendations into the site's editorial design. It includes the audience, research approach, strategic insight, four proposed activations, and campaign-language studies. It is labeled as a strategy and creative proposal; no implemented partnership or measured campaign results are claimed. No collaborator credits are displayed.
+
+The homepage's first work module links to this case study; the second remains a capability spotlight. Change the project's `featured` flag to control homepage inclusion. Update recommendations and campaign lines in the project entry. Artwork is rendered as HTML/CSS in `src/components/projects.tsx`; original slide images and interview transcripts are not uploaded to the public website. Images added later should use local `/images/...` paths, which the case-study components prefix for GitHub Pages.
