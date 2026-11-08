@@ -6,7 +6,7 @@ export type ProjectImage = {
 };
 export type Project = {
   id: string; slug: string; title: string; client: string; category: string; year: string;
-  shortDescription: string; heroImage: string; thumbnailImage: string;
+  shortDescription: string; cardDescription?: string; heroImage: string; thumbnailImage: string;
   galleryImages: ProjectImage[];
   heroVisual?: ProjectImage; thumbnailVisual?: ProjectImage;
   challenge: string; insight: string; approach: string; solution: string; outcome: string;
@@ -17,7 +17,7 @@ export type Project = {
 };
 
 const handAndStone: Project = {
-  id: 'hand-and-stone', slug: 'hand-and-stone', title: 'Hand & Stone', client: 'Hand & Stone',
+  id: 'hand-and-stone', slug: 'hand-and-stone', cardDescription: 'Brand strategy and a recovery-led campaign direction.', title: 'Hand & Stone', client: 'Hand & Stone',
   category: 'Brand & Campaign Strategy', year: '', projectType: 'Strategy & creative proposal',
   headline: 'From occasional self-care to everyday recovery.',
   editorial: {challengeTitle: 'A clearer place\nin modern wellness.', audienceTitle: 'Self-care matters.\nMaking time is harder.', insightNote: 'A SHIFT FROM PERMISSION TO PURPOSE.', directionTitle: 'Recovery belongs\nin the routine.', recommendationsTitle: 'One idea.\nFour connected expressions.', campaignTitle: 'A new way\nto show up.', campaignDescription: 'Campaign language brings the strategy into everyday life. These concepts carry the recovery idea through brand storytelling and social communication.', heroCaption: 'SOCIAL CAMPAIGN CONCEPTS / FROM THE PROPOSAL'},
@@ -51,7 +51,7 @@ const handAndStone: Project = {
 };
 
 const hinge: Project = {
-  id: 'hinge', slug: 'hinge', title: 'Hinge', client: 'Hinge', category: 'Brand & Campaign Strategy', year: '',
+  id: 'hinge', slug: 'hinge', cardDescription: 'Turning dating fatigue into a reason to try again.', title: 'Hinge', client: 'Hinge', category: 'Brand & Campaign Strategy', year: '',
   projectType: 'Strategy & creative proposal', headline: 'Make trying attractive.',
   shortDescription: 'A strategy and campaign concept that reframes effort as attractive, giving intentional daters a reason to show up honestly and try again.',
   heroImage: '', thumbnailImage: '',
@@ -90,7 +90,7 @@ const hinge: Project = {
 };
 
 const goff: Project = {
-  id: 'goff', slug: 'goff', title: 'goff.', client: 'goff.', category: 'Brand Identity & Art Direction', year: '',
+  id: 'goff', slug: 'goff', cardDescription: 'A hospitality identity built around meaningful connection.', title: 'goff.', client: 'goff.', category: 'Brand Identity & Art Direction', year: '',
   projectType: 'Hospitality brand concept', headline: 'A place to connect. Together.',
   shortDescription: 'A hospitality identity built around meaningful connection, bringing the spirit of the conversation pit into a warm, expressive brand world.',
   heroImage: '', thumbnailImage: '',
@@ -132,7 +132,7 @@ const goff: Project = {
 };
 
 const parksProject: Project = {
-  id: 'parks-project', slug: 'parks-project', title: 'Parks Project', client: 'Parks Project', category: 'Experience & Campaign Strategy', year: '',
+  id: 'parks-project', slug: 'parks-project', cardDescription: 'An interactive-film concept that turns attention into action.', title: 'Parks Project', client: 'Parks Project', category: 'Experience & Campaign Strategy', year: '',
   projectType: 'Integrated campaign concept', headline: 'Save the people who save the parks.',
   shortDescription: 'An interactive-film campaign concept connecting the human story of park workers with a proposed path from cultural attention to public action.',
   heroImage: '', thumbnailImage: '',

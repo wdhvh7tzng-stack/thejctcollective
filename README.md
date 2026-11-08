@@ -84,7 +84,7 @@ Published projects are featured on the homepage and linked from the Related work
 
 The published `/work/goff/` entry adapts the uploaded goff. brand guidelines into a hospitality brand-identity case study. It covers the conversation-pit inspiration, identity system, graphic vocabulary, print and merchandise applications, and digital concepts. Selected source visuals are in `public/images/goff/`; copy, captions, and image framing are in `src/content/projects.ts`. The work is presented as a brand concept, without claims of a launched venue or measured commercial results.
 
-The homepage automatically lists featured projects in an editorial grid. An unpaired final project uses a wider row on desktop; every project stacks on mobile.
+The homepage lists featured projects in a consistent two-column grid with equal image frames, one link per project, and short descriptions. Projects stack on mobile. Edit each project’s `cardDescription` to change its homepage summary; full case-study copy remains separate.
 
 
 ## Parks Project case study

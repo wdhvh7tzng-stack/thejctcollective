@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { CSSProperties } from 'react';
 import { Project, ProjectImage, publishedProjects } from '@/content/projects';
 import { ContactCTA, Label, TextLink } from './editorial';
 
@@ -28,7 +29,20 @@ function ProjectGallery({ images, placement }: { images: ProjectImage[]; placeme
   return <div className={`case-gallery deck-gallery deck-gallery-${placement || 'default'}`}>{selected.map(image => <figure key={`${image.src}-${image.alt}`}><DeckVisual image={image}/>{image.caption && <figcaption>{image.caption}</figcaption>}</figure>)}</div>;
 }
 
-export function ProjectCard({ project, index = 1 }: { project: Project; index?: number }) {
+export function ProjectCard({ project, index = 1, variant = 'default' }: { project: Project; index?: number; variant?: 'default' | 'home' }) {
+  const previewCrop = project.thumbnailVisual?.crop;
+  const previewRatio = previewCrop ? previewCrop.width / previewCrop.height : 16 / 9;
+  const previewStyle = {'--preview-width': `${Math.min(100, previewRatio / (16 / 9) * 100)}%`} as CSSProperties;
+  if (variant === 'home') return <article className="work-card">
+    <Link href={`/work/${project.slug}`} className="work-card-link" aria-label={`Read the ${project.title} case study`}>
+      <div className="work-preview" style={previewStyle}>
+        {project.thumbnailVisual ? <DeckVisual image={project.thumbnailVisual}/> : project.thumbnailImage ? <Image src={assetPath(project.thumbnailImage)} alt={project.title} width={900} height={650}/> : <ProjectArtwork compact/>}
+      </div>
+      <div className="work-card-heading"><h3>{project.title}</h3><span aria-hidden="true">↗</span></div>
+      <p className="work-category">{project.category}</p>
+      <p className="work-description">{project.cardDescription || project.shortDescription}</p>
+    </Link>
+  </article>;
   return <article className="project-card">
     <Link href={`/work/${project.slug}`} className="art-link" aria-label={`Read the ${project.title} case study`}>
       {project.thumbnailVisual ? <DeckVisual image={project.thumbnailVisual}/> : project.thumbnailImage ? <Image src={assetPath(project.thumbnailImage)} alt={project.title} width={900} height={650} /> : <ProjectArtwork compact />}
