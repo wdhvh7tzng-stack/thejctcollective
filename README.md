@@ -77,4 +77,11 @@ The homepage features Hand & Stone alongside the Hinge case study. Change the pr
 
 The published `/work/hinge/` entry adapts the uploaded strategy presentation around “Make Trying Attractive.” It covers intentional daters, the central insight, Off the Hinge feature proposal, outdoor campaign concepts, and a proposed We’re Not Really Strangers collaboration. Selected deck visuals are in `public/images/hinge/`. They are presented as concepts and mockups, without claims of a launched feature, confirmed partnership, or measured campaign results.
 
-Both published projects are featured on the homepage and linked from each other’s Related work section. Project-specific headings and captions are stored in the `editorial` object in `src/content/projects.ts`, alongside the copy, images, alt text, and recommendations.
+Published projects are featured on the homepage and linked from the Related work section of each case study. Project-specific headings and captions are stored in the `editorial` object in `src/content/projects.ts`, alongside the copy, images, alt text, and recommendations.
+
+
+## goff. case study
+
+The published `/work/goff/` entry adapts the uploaded goff. brand guidelines into a hospitality brand-identity case study. It covers the conversation-pit inspiration, identity system, graphic vocabulary, print and merchandise applications, and digital concepts. Selected source visuals are in `public/images/goff/`; copy, captions, and image framing are in `src/content/projects.ts`. The work is presented as a brand concept, without claims of a launched venue or measured commercial results.
+
+The homepage automatically lists all three featured projects: Hand & Stone, Hinge, and goff. The third project uses a wider editorial row on desktop and stacks on mobile.

@@ -12,7 +12,7 @@ export type Project = {
   challenge: string; insight: string; approach: string; solution: string; outcome: string;
   services: string[]; featured: boolean; status: 'draft' | 'published';
   projectType?: string; headline?: string; audience?: string; research?: string;
-  editorial?: {challengeTitle: string; audienceTitle: string; insightNote: string; directionTitle: string; recommendationsTitle: string; campaignTitle: string; campaignDescription: string; heroCaption: string};
+  editorial?: {recommendationsLabel?: string; researchTitle?: string; challengeTitle: string; audienceTitle: string; insightNote: string; directionTitle: string; recommendationsTitle: string; campaignTitle: string; campaignDescription: string; heroCaption: string};
   recommendations?: Recommendation[]; campaignLines?: string[];
 };
 
@@ -89,6 +89,48 @@ const hinge: Project = {
   featured: true, status: 'published'
 };
 
+const goff: Project = {
+  id: 'goff', slug: 'goff', title: 'goff.', client: 'goff.', category: 'Brand Identity & Art Direction', year: '',
+  projectType: 'Hospitality brand concept', headline: 'A place to connect. Together.',
+  shortDescription: 'A hospitality identity built around meaningful connection, bringing the spirit of the conversation pit into a warm, expressive brand world.',
+  heroImage: '', thumbnailImage: '',
+  editorial: {
+    challengeTitle: 'Give connection\na physical identity.', audienceTitle: 'Less passing through.\nMore coming together.',
+    researchTitle: 'An architectural starting point.', insightNote: 'A CONVERSATION PIT. A SHARED POINT OF VIEW.',
+    directionTitle: 'Build the brand\naround the conversation.', recommendationsLabel: '04 / THE IDENTITY IN PRACTICE',
+    recommendationsTitle: 'One identity.\nA world of touchpoints.', campaignTitle: 'The same feeling,\nwherever you meet it.',
+    campaignDescription: 'The identity extends from the street to the screen. Outdoor placements, a desktop website concept, and mobile layouts carry the same palette, framing, and conversational voice into each encounter.',
+    heroCaption: 'BRAND CONCEPT / FROM THE IDENTITY PRESENTATION'
+  },
+  heroVisual: {src: '/images/goff/brand-cover.webp', alt: 'The cream goff. wordmark over a warm, wood-paneled mid-century interior with a sunken seating area.'},
+  thumbnailVisual: {src: '/images/goff/outdoor-identity.webp', alt: 'Three outdoor goff. identity mockups with earthy green, warm cream, and burnt-orange graphics against a leafy street setting.'},
+  galleryImages: [
+    {src: '/images/goff/color-system.webp', alt: 'The goff. color system: deep green, pale blue, butter yellow, burnt orange, soft green, and dark brown.', caption: '01 / An expressive palette grounded in warmth and connection.', placement: 'direction', crop: {x: 0, y: 170, width: 1920, height: 815, sourceWidth: 1920, sourceHeight: 1080}},
+    {src: '/images/goff/conversation-pit-symbol.webp', alt: 'Layered geometric conversation-pit symbols in the goff. palette, with circular variations.', caption: '02 / The conversation-pit motif becomes a flexible graphic identifier.', placement: 'direction', crop: {x: 720, y: 160, width: 1150, height: 820, sourceWidth: 1920, sourceHeight: 1080}},
+    {src: '/images/goff/stationery.webp', alt: 'goff. stationery mockups including an orange folder, letterhead, envelope, and business cards on a pale-yellow background.', caption: '03 / Print identity: stationery, correspondence, and business cards.', placement: 'recommendations', crop: {x: 100, y: 145, width: 1620, height: 850, sourceWidth: 1920, sourceHeight: 1080}},
+    {src: '/images/goff/merchandise.webp', alt: 'Two goff. lighter concepts: one wrapped in the layered conversation-pit pattern and one in burnt orange.', caption: '04 / Small-format merchandise carries the identity beyond the space.', placement: 'recommendations'},
+    {src: '/images/goff/website-concept.webp', alt: 'goff. desktop website mockup on a laptop beside a branded cup, featuring the line this visit is long overdue.', caption: '05 / Desktop website concept: a warm invitation to visit.', placement: 'campaign', crop: {x: 0, y: 145, width: 1920, height: 850, sourceWidth: 1920, sourceHeight: 1080}},
+    {src: '/images/goff/mobile-website.webp', alt: 'Mobile goff. website concept on a phone, carrying the orange palette, wordmark, and editorial image grid.', caption: '06 / Mobile website concept: the same visual language on a smaller screen.', placement: 'campaign'},
+    {src: '/images/goff/outdoor-identity.webp', alt: 'Street-level goff. poster mockups showing the wordmark and a textured image treatment in the brand palette.', caption: '07 / Outdoor brand applications: recognizable before you step inside.', placement: 'campaign'}
+  ],
+  challenge: 'Create a recognizable identity for a hospitality concept centered on dialogue and meaningful connection. The brand needed to express a warm, welcoming sense of place while remaining distinctive across an environment, a printed object, and a digital experience.',
+  audience: 'The concept invites people to slow down, gather, and have a real conversation. Its point of view is personal and open: a place that makes connection feel intentional, with a visual identity that is playful, bold, and approachable.',
+  research: 'The design exploration takes its cue from Bruce Goff’s conversation pit and mid-century modern architecture. References to seventies and nineties advertising, vintage photography, and contemporary interiors inform the moodboards and visual guidelines. These references shape the brand’s atmosphere and graphic vocabulary.',
+  insight: 'A space built for conversation can have an identity built the same way: layered, inviting, and centered on bringing people together.',
+  approach: 'Turn the conversation pit into a visual system. A lowercase wordmark, Aileron typography, earthy color combinations, and a geometric pit motif create the foundation. Asymmetric frames echo the architecture, while a mix of vintage-inspired and modern imagery keeps the identity expressive.',
+  solution: 'The resulting guidelines connect logo usage, clearspace, color, typography, image treatments, and framing into one flexible system. That system is explored across signage, print, merchandise, hospitality materials, outdoor communication, and website concepts.',
+  recommendations: [
+    {title: 'Make the foundation unmistakable.', description: 'The lowercase goff. wordmark pairs with a contrasting palette and a defined typographic hierarchy. Logo clearspace and color-use guidance keep the identity consistent without making it rigid.', touchpoints: 'Wordmark / color system / Aileron typography / usage guidelines'},
+    {title: 'Let the architecture become the graphic.', description: 'The conversation-pit symbol and layered, uneven frames translate the spatial idea into repeatable design elements. Two-tone image treatments connect varied photography to the same visual world.', touchpoints: 'Graphic identifier / framing system / image direction'},
+    {title: 'Carry the feeling beyond the visit.', description: 'Stationery, editorial print, candles, lighter concepts, and takeaway materials extend the brand into everyday objects, giving the identity a life beyond the physical space.', touchpoints: 'Print collateral / merchandise / packaging concepts'},
+    {title: 'Keep every encounter connected.', description: 'Signage and outdoor applications establish recognition in the environment. Website and social concepts translate the same colors, typography, imagery, and voice into digital touchpoints.', touchpoints: 'Signage / outdoor identity / website concepts / social direction'}
+  ],
+  campaignLines: ['A place to connect. Together.', 'This visit is long overdue.', 'Dare to do something new.'],
+  outcome: 'The result is a cohesive hospitality brand concept and a practical set of identity guidelines. The presentation demonstrates how a single spatial idea can connect brand expression across physical, printed, and digital applications, with mockups showing how the system could come to life.',
+  services: ['Brand Identity', 'Art Direction', 'Brand Guidelines', 'Print Design', 'Digital Design Concepts'],
+  featured: true, status: 'published'
+};
+
 const drafts: Project[] = ['Brand Strategy', 'Campaign Strategy'].map((category, i) => ({
   id: String(i + 1), slug: category.toLowerCase().replaceAll(' ', '-') + '-project',
   title: category + ' Project', category, client: '', year: '',
@@ -96,5 +138,5 @@ const drafts: Project[] = ['Brand Strategy', 'Campaign Strategy'].map((category,
   challenge: '[Add approved challenge]', insight: '[Add approved insight]', approach: '[Add approved approach]',
   solution: '[Add approved creative execution]', outcome: '[Add approved outcome]', services: [], featured: false, status: 'draft'
 }));
-export const projects: Project[] = [handAndStone, hinge, ...drafts];
+export const projects: Project[] = [handAndStone, hinge, goff, ...drafts];
 export const publishedProjects = projects.filter(p => p.status === 'published');
