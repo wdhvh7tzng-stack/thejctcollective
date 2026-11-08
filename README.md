@@ -17,10 +17,10 @@ The development server uses port 3000. Visit it in your local browser when runni
 npm run lint
 npm run typecheck
 npm run build
-npm start
+
 ```
 
-In this cloud environment use local HTTP requests for readiness; onboarding does not provide public localhost preview links. Processes must restart in new sessions.
+In this cloud environment use local HTTP requests for readiness; onboarding does not provide public localhost preview links. Development processes must restart in new sessions. Production is a static export; see GitHub Pages hosting below.
 
 ## Pages and content
 
@@ -45,9 +45,23 @@ Copy `.env.example` to `.env.local` if configuring the domain locally. Set `NEXT
 ## GitHub and Vercel launch
 
 1. Review changes with `git status` and `git diff`. Commit the approved site and push your branch to the connected GitHub repository using your normal authorized Git workflow.
-2. Import the repository into Vercel, choose the Next.js preset, and use the repository root. Install with `npm ci`, build with `npm run build`.
+2. Import the repository into Vercel, choose the Next.js preset, and use the repository root. Install with `npm ci`, build with `npm run build`. This site uses a static export; use `out` as the output directory if prompted.
 3. Add `NEXT_PUBLIC_SITE_URL` with the real production origin. No application secrets are required.
 4. Connect your domain in Vercel and configure the DNS records Vercel provides. Redeploy after changing build-time site configuration.
 5. Verify all four pages, mobile navigation and keyboard behavior, email address/subject, clipboard fallback, social image, canonical metadata, sitemap, robots, and draft 404s over HTTPS.
 
 Deployment and external services are not performed by this build. Confirm founder information, approved assets, and the production domain before launch. Lighthouse scores and real-world Core Web Vitals require deployment measurements; no scores are claimed here.
+
+## GitHub Pages hosting
+
+The site now exports static HTML into `out/`. The workflow in `.github/workflows/pages.yml` builds and deploys it on pushes to `main`.
+
+In the GitHub repository, open **Settings → Pages → Build and deployment → Source → GitHub Actions**. Then open **Actions → Deploy website to GitHub Pages → Run workflow** if the first run needs to be retried. GitHub will show the actual site address when deployment finishes. A repository site normally uses `https://wdhvh7tzng-stack.github.io/thejctcollective/`.
+
+The workflow derives `NEXT_PUBLIC_BASE_PATH` and `NEXT_PUBLIC_SITE_URL` from GitHub Pages settings, including custom domains. Do not hard-code a different production origin in GitHub. Local development needs neither variable. For a local static build matching the repository path:
+
+```sh
+NEXT_PUBLIC_BASE_PATH=/thejctcollective NEXT_PUBLIC_SITE_URL=https://wdhvh7tzng-stack.github.io/thejctcollective/ npm run build
+```
+
+Serve `out/` using a static HTTP server with that directory mounted at `/thejctcollective/`. Static output does not use `npm start`; use `npm run dev` for normal development. Images use Next's unoptimized setting because GitHub Pages has no image-processing server. All published case-study slugs are generated at build time; publishing requires a rebuild. When no projects are published, the internal build-only fallback resolves to not-found content and never enters the sitemap or listings.
