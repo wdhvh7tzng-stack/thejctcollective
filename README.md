@@ -84,4 +84,11 @@ Published projects are featured on the homepage and linked from the Related work
 
 The published `/work/goff/` entry adapts the uploaded goff. brand guidelines into a hospitality brand-identity case study. It covers the conversation-pit inspiration, identity system, graphic vocabulary, print and merchandise applications, and digital concepts. Selected source visuals are in `public/images/goff/`; copy, captions, and image framing are in `src/content/projects.ts`. The work is presented as a brand concept, without claims of a launched venue or measured commercial results.
 
-The homepage automatically lists all three featured projects: Hand & Stone, Hinge, and goff. The third project uses a wider editorial row on desktop and stacks on mobile.
+The homepage automatically lists featured projects in an editorial grid. An unpaired final project uses a wider row on desktop; every project stacks on mobile.
+
+
+## Parks Project case study
+
+The published `/work/parks-project/` entry adapts the uploaded “Miscast” experience-marketing deck. It covers the proposed interactive film, audience-to-action journey, theater/streaming concepts, outdoor campaign, and merchandise. The A24 collaboration, film, rollout, and fundraising/contact figures are explicitly described as proposals and targets, rather than confirmed partnerships, released work, or achieved results. The mobile UI is displayed as static concept imagery; the portfolio does not send advocacy messages or collect donations.
+
+Selected source visuals are in `public/images/parks-project/`. Edit the case-study copy, image framing, captions, and alt text in `src/content/projects.ts`. All four featured examples appear on the homepage and in related-work navigation.

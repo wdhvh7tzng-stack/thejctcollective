@@ -131,6 +131,47 @@ const goff: Project = {
   featured: true, status: 'published'
 };
 
+const parksProject: Project = {
+  id: 'parks-project', slug: 'parks-project', title: 'Parks Project', client: 'Parks Project', category: 'Experience & Campaign Strategy', year: '',
+  projectType: 'Integrated campaign concept', headline: 'Save the people who save the parks.',
+  shortDescription: 'An interactive-film campaign concept connecting the human story of park workers with a proposed path from cultural attention to public action.',
+  heroImage: '', thumbnailImage: '',
+  editorial: {
+    challengeTitle: 'Make the people\nbehind the parks visible.', audienceTitle: 'Move beyond watching.\nGive people a way to act.',
+    researchTitle: 'A story shaped by the medium.', insightNote: 'FROM THE ILLUSION OF CHOICE TO A REAL NEXT STEP.',
+    directionTitle: 'Introducing Miscast.', recommendationsLabel: '04 / THE EXPERIENCE IN PRACTICE',
+    recommendationsTitle: 'One story.\nA connected path to action.', campaignTitle: 'Keep the story\nin the world.',
+    campaignDescription: 'The proposed campaign extends beyond the film through outdoor communication and a merchandise collection. Each touchpoint carries the same story, connecting the cultural experience with the people at its center.',
+    heroCaption: 'MISCAST POSTER MOCKUPS / PROPOSED A24 COLLABORATION'
+  },
+  heroVisual: {src: '/images/parks-project/miscast-posters.webp', alt: 'Miscast outdoor poster concepts pairing forest-green film artwork with the line Save the people who save the parks.', crop: {x: 108, y: 136, width: 1680, height: 878, sourceWidth: 1920, sourceHeight: 1080}},
+  thumbnailVisual: {src: '/images/parks-project/miscast-posters.webp', alt: 'Street-poster mockup for the proposed Parks Project Miscast campaign.', crop: {x: 108, y: 136, width: 1680, height: 878, sourceWidth: 1920, sourceHeight: 1080}},
+  galleryImages: [
+    {src: '/images/parks-project/cinema-experience.webp', alt: 'Concept image of an interactive Miscast cinema screening, with an audience member holding a two-button voting device.', caption: '01 / Theater experience concept: audience votes determine the next scene.', placement: 'direction'},
+    {src: '/images/parks-project/streaming-experience.webp', alt: 'At-home Miscast viewing concept on a laptop with a QR code on the screen.', caption: '02 / Streaming concept: carry the invitation to act into at-home viewing.', placement: 'direction'},
+    {src: '/images/parks-project/mobile-action-flow.webp', alt: 'Two concept mobile screens showing ZIP-code entry and representative lookup for a proposed campaign action flow.', caption: '03 / Mobile journey concept: find representatives and choose the next step.', placement: 'recommendations', crop: {x: 60, y: 90, width: 855, height: 960, sourceWidth: 1920, sourceHeight: 1080}},
+    {src: '/images/parks-project/mobile-action-flow.webp', alt: 'Two concept mobile screens showing an editable message to representatives and a confirmation screen.', caption: '04 / Mobile journey concept: review a message and continue participation.', placement: 'recommendations', crop: {x: 945, y: 90, width: 855, height: 960, sourceWidth: 1920, sourceHeight: 1080}},
+    {src: '/images/parks-project/fleece-concept.webp', alt: 'Front and back views of a proposed Parks Project and A24 Yosemite fleece with mountain and forest graphics.', caption: '05 / Co-branded fleece concept for the proposed merchandise collection.', placement: 'campaign', crop: {x: 20, y: 180, width: 1200, height: 630, sourceWidth: 1920, sourceHeight: 1080}},
+    {src: '/images/parks-project/soundtrack-concept.webp', alt: 'Proposed Miscast soundtrack artwork with a Yosemite landscape on the sleeve and a forest-green vinyl record.', caption: '06 / Soundtrack and packaging concept: a physical extension of the film world.', placement: 'campaign', crop: {x: 1000, y: 215, width: 800, height: 545, sourceWidth: 1920, sourceHeight: 1080}}
+  ],
+  challenge: 'The brief centers on funding pressures facing national park workers and the gap between affection for public lands and support for the people who maintain them. The creative challenge was to make an institutional issue feel human, immediate, and difficult to ignore.',
+  audience: 'The proposed experience meets people as filmgoers, at-home viewers, and participants in outdoor culture. Instead of asking attention to do all the work, it connects a shared emotional moment with a clear opportunity to learn more, support the cause, or contact representatives.',
+  research: 'The creative development draws on Nomadland’s human perspective and the branching storytelling of Black Mirror: Bandersnatch. The deck proposes A24 as a storytelling collaborator, pairing an immersive film format with Parks Project’s outdoor identity and a digital participation journey.',
+  insight: 'An audience can choose what happens on screen without being able to change the outcome. That tension becomes the opening for a different question: what can we do once the film ends?',
+  approach: 'Build an experience around the contrast between fictional choice and real participation. In Miscast, viewers influence the story through decision points, but each path reaches a shared ending of loss. The final moment shifts from storytelling to a proposed invitation to act, keeping the people behind the parks at the center.',
+  solution: 'The concept connects a proposed interactive film, theater-to-streaming rollout, mobile action flow, outdoor promotion, and a co-branded merchandise collection under one campaign platform: Save the people who save the parks.',
+  recommendations: [
+    {title: 'Make the story participatory.', description: 'A proposed interactive screening lets the audience choose the next scene using in-theater voting devices. The shared ending challenges the feeling of control and makes the human stakes of the story harder to dismiss.', touchpoints: 'Interactive film concept / cinema experience / collective decision points'},
+    {title: 'Make the next step clear.', description: 'A QR-led mobile journey would connect the final scene with representative lookup and an editable message. The deck proposes Phone2Action as the participation route, with the aim of reducing friction between emotional response and action.', touchpoints: 'QR entry point / mobile journey / representative contact concept'},
+    {title: 'Carry the experience beyond the theater.', description: 'A proposed streaming phase extends the same narrative and participation idea to viewers at home. Outdoor posters and a trailer concept would create recognition and bring people into the film’s world.', touchpoints: 'Streaming proposal / outdoor campaign / trailer direction'},
+    {title: 'Give the campaign a physical life.', description: 'Fleece designs, a ranger-inspired pin, and a soundtrack concept extend Miscast into a proposed Parks Project and A24 collection, connecting the campaign’s visual world with tangible objects.', touchpoints: 'Merchandise concepts / soundtrack packaging / co-branding direction'}
+  ],
+  campaignLines: ['Save the people who save the parks.', 'Miscast.', 'From screen to action.'],
+  outcome: 'The result is an integrated experience and campaign proposal linking storytelling, participation design, promotion, and merchandise. The deck sets targets of $30 million in support for a year of Yosemite workforce salaries and 150,000 contacts to elected officials. These are proposed campaign goals, not achieved results; the film, partnerships, and rollout are presented as concepts.',
+  services: ['Campaign Strategy', 'Experience Design', 'Creative Concept', 'Digital Journey Design', 'Art Direction'],
+  featured: true, status: 'published'
+};
+
 const drafts: Project[] = ['Brand Strategy', 'Campaign Strategy'].map((category, i) => ({
   id: String(i + 1), slug: category.toLowerCase().replaceAll(' ', '-') + '-project',
   title: category + ' Project', category, client: '', year: '',
@@ -138,5 +179,5 @@ const drafts: Project[] = ['Brand Strategy', 'Campaign Strategy'].map((category,
   challenge: '[Add approved challenge]', insight: '[Add approved insight]', approach: '[Add approved approach]',
   solution: '[Add approved creative execution]', outcome: '[Add approved outcome]', services: [], featured: false, status: 'draft'
 }));
-export const projects: Project[] = [handAndStone, hinge, goff, ...drafts];
+export const projects: Project[] = [handAndStone, hinge, goff, parksProject, ...drafts];
 export const publishedProjects = projects.filter(p => p.status === 'published');
